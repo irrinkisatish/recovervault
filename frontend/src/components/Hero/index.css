@@ -14,6 +14,8 @@
   font-family: "OpenSans-Regular";
   src: url("font/OpenSans-Regular.ttf");
 }
+
+/* Default styles */
 .hero-section {
   background-color: beige;
   width: 100%;
@@ -26,6 +28,8 @@
   align-items: center;
   justify-content: space-around;
 }
+
+/* Text styles */
 .hero-section h1 {
   font-family: "Lemon-Regular";
   font-weight: 400;
@@ -33,9 +37,11 @@
   width: 400px;
   text-transform: capitalize;
 }
+
 .hero-span {
-  color: #e2f133;
+  color: #ea5110;
 }
+
 .hero-section p {
   font-family: "OpenSans-Regular";
   font-weight: 400;
@@ -43,6 +49,8 @@
   width: 309px;
   padding: 30px 0px;
 }
+
+/* Button styles */
 .hero-section button {
   font-family: "OpenSans-Bold";
   font-weight: 700;
@@ -53,4 +61,61 @@
   border-radius: 50px 0px 50px 0px;
   background-color: #ef5e41;
   border: none;
+  cursor: pointer;
+}
+
+/* ======================== */
+/* 📱 Responsive Styles 📱  */
+/* ======================== */
+
+/* Tablets (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+  .hero-section {
+    padding: 0px 50px; /* Reduce padding */
+    height: 60vh; /* Slightly reduce height */
+  }
+
+  .hero-section h1 {
+    font-size: 28px;
+    width: 350px;
+  }
+
+  .hero-section p {
+    font-size: 16px;
+    width: 280px;
+  }
+
+  .hero-section button {
+    width: 120px;
+    height: 55px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile devices (Below 768px) */
+@media screen and (max-width: 768px) {
+  .hero-section {
+    flex-direction: column; /* Stack elements */
+    text-align: center; /* Center align text */
+    padding: 20px; /* Adjust padding */
+    height: auto; /* Adjust height */
+  }
+
+  .hero-section h1 {
+    font-size: 24px;
+    width: 100%;
+  }
+
+  .hero-section p {
+    font-size: 14px;
+    width: 100%;
+    padding: 20px 0px;
+  }
+
+  .hero-section button {
+    width: 110px;
+    height: 50px;
+    font-size: 13px;
+    margin-top: 10px;
+  }
 }

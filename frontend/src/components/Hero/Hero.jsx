@@ -7,15 +7,18 @@ const Hero = () => {
     <div className="hero-section">
       <div className="hero-content">
         <h1>
-          Discover <span className="hero-span">luxury essentials</span> for
-          every occasion
+          Welcome to <span className="hero-span">Solomon Trading LLC</span> —
+          your one-stop shop for all things stylish and practical!
         </h1>
         <p>
-          Starting at just $99, explore our exclusive collection of perfumes,
-          handbags, and more.
+          Whether you're looking for the latest fashion trends, unique gift
+          items, high-quality home decor, or wholesale deals on used cars and
+          scrap materials, we've got you covered. Explore our diverse selection
+          of products at unbeatable prices, all while enjoying fast shipping and
+          exceptional customer service.
         </p>
         <Link to="/collection">
-          <button>Shop Now</button>
+          <button>Explore</button>
         </Link>
       </div>
       <div className="hero-img">

@@ -64,7 +64,7 @@ const Product = () => {
             {productData.description}
           </p>
           <div className="flex flex-col gap-4 my-8">
-            <p>SELECT SIZE</p>
+            <p>SELECT Size</p>
             <div className="flex gap-2">
               {productData.sizes.map((item, index) => (
                 <button
@@ -94,7 +94,7 @@ const Product = () => {
           </div>
         </div>
       </div>
-      {/*---description and review section--*/}
+      {/*---description and review section--
       <div className="mt-20">
         <div className="flex">
           <b className="border px-5 py-3 text-sm">Description</b>
@@ -108,7 +108,7 @@ const Product = () => {
           </p>
         </div>
       </div>
-
+*/}
       {/* -----display related products----------*/}
       <RealtedProducts
         category={productData.category}

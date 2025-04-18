@@ -97,28 +97,28 @@ const Collections = () => {
               <input
                 type="checkbox"
                 className="w-3"
-                value={"Men"}
+                value={"Fashion"}
                 onChange={toggleCategory}
               />
-              Men
+              Fashion
             </p>
             <p className="flex gap-2">
               <input
                 onChange={toggleCategory}
                 type="checkbox"
                 className="w-3"
-                value={"Women"}
+                value={"Gift Items"}
               />
-              Women
+              Gift Items
             </p>
             <p className="flex gap-2">
               <input
                 onChange={toggleCategory}
                 type="checkbox"
                 className="w-3"
-                value={"Kids"}
+                value={"Used Cars"}
               />
-              Kids
+              Used Cars
             </p>
           </div>
         </div>
@@ -134,28 +134,28 @@ const Collections = () => {
               <input
                 type="checkbox"
                 className="w-3"
-                value={"Topwear"}
+                value={"Accessories"}
                 onChange={toggleSubCategory}
               />
-              TopWear
+              Accessories
             </p>
             <p className="flex gap-2">
               <input
                 onChange={toggleSubCategory}
                 type="checkbox"
                 className="w-3"
-                value={"Bottomwear"}
+                value={"Fragrance"}
               />
-              Bottomwear
+              Fragrance
             </p>
             <p className="flex gap-2">
               <input
                 onChange={toggleSubCategory}
                 type="checkbox"
                 className="w-3"
-                value={"Winterwear"}
+                value={"Gift Sets"}
               />
-              Winterwear
+              Gift Sets
             </p>
           </div>
         </div>

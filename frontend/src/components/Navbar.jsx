@@ -38,7 +38,7 @@ const Navbar = () => {
           className="w-5 cursor-pointer"
           alt=""
         />
-        <div className="group relative">
+        {/*<div className="group relative">
           <img
             src={assets.profile_icon}
             className="w-5 cursor-pointer"
@@ -51,7 +51,7 @@ const Navbar = () => {
               <p className="cursor-pointer hover:text-black">Logout</p>
             </div>
           </div>
-        </div>
+        </div>*/}
 
         <Link to="/cart" className="relative">
           <img src={assets.cart_icon} className="w-5 min-w-5" alt="" />

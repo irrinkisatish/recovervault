@@ -1,46 +1,55 @@
 import React from "react";
 import "./index.css";
 import { NavLink } from "react-router-dom";
+import { assets } from "../../assets/assets";
+
 const Footer = () => {
   return (
-    <footer class="bg-black text-gray-400 font-sans mt-2">
-      <div class="flex flex-col items-center py-8">
-        {/*<div class="flex justify-center space-x-6 mb-4 text-2xl">
-          <a href="#" class="hover:text-white transition-colors">
-            <i class="fa fa-facebook"></i>
-          </a>
-          <a href="#" class="hover:text-white transition-colors">
-            <i class="fa fa-instagram"></i>
-          </a>
-          <a href="#" class="hover:text-white transition-colors">
-            <i class="fa fa-youtube"></i>
-          </a>
-          <a href="#" class="hover:text-white transition-colors">
-            <i class="fa fa-twitter"></i>
-          </a>
-        </div>
-*/}
-        <ul class="flex flex-wrap justify-center gap-6 mb-4 text-sm">
+    <footer className="bg-black text-gray-400 font-sans mt-2">
+      <div className="flex flex-col items-center py-8">
+        {/* Social Media Links section has been removed */}
+
+        {/* Footer Links */}
+        <ul className="flex flex-wrap justify-center gap-3 mb-4 text-sm">
           <li>
-            <NavLink to="/contact" class="hover:text-white transition-colors">
-              Contact us
+            <NavLink
+              to="/testimonials"
+              className="hover:text-white transition-colors"
+            >
+              Testimonials
             </NavLink>
           </li>
 
           <li>
-            <a href="#" class="hover:text-white transition-colors">
-              Privacy Policy
-            </a>
+            <NavLink
+              to="/privacyPolicy"
+              className="hover:text-white transition-colors"
+            >
+              How It Works Page
+            </NavLink>
           </li>
           <li>
-            <a href="#" class="hover:text-white transition-colors">
-              Terms & Conditions
-            </a>
+            <NavLink
+              to="/termsconditions"
+              className="hover:text-white transition-colors"
+            >
+              FAQ Page
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/termspolicy"
+              className="hover:text-white transition-colors"
+            >
+              Terms/Policy
+            </NavLink>
           </li>
         </ul>
 
-        <div class="text-center text-xs text-gray-400 px-4">
-          Irrinki © 2025 Satish — All rights reserved || Designed By: Satish
+        {/* Payment Logos */}
+
+        <div className="text-center text-xs text-gray-400 px-4">
+          Recover Vault — All rights reserved
         </div>
       </div>
     </footer>

@@ -1,191 +1,96 @@
-import React, { useContext, useEffect, useState } from "react";
-import { ShopContext } from "../context/ShopContext";
+import React from "react";
 import { assets } from "../assets/assets";
-import Title from "../components/Title";
-import ProductItem from "../components/ProductItem";
+import { Link } from "react-router-dom";
 
 const Collections = () => {
-  const { products, search, showSearch } = useContext(ShopContext);
-  const [showFilter, setShowFilter] = useState(false);
-  const [filterProducts, setFilterProducts] = useState([]);
-  const [category, setCategory] = useState([]);
-  const [subCategory, setSubCategory] = useState([]);
-  const [sortType, setSortType] = useState("relavent");
-
-  const toggleCategory = (e) => {
-    if (category.includes(e.target.value)) {
-      setCategory((prev) => prev.filter((item) => item !== e.target.value));
-    } else {
-      setCategory((prev) => [...prev, e.target.value]);
-    }
-  };
-
-  const toggleSubCategory = (e) => {
-    if (subCategory.includes(e.target.value)) {
-      setSubCategory((prev) => prev.filter((item) => item !== e.target.value));
-    } else {
-      setSubCategory((prev) => [...prev, e.target.value]);
-    }
-  };
-
-  const applyFilter = () => {
-    let productsCopy = products.slice();
-
-    if (showSearch && search) {
-      productsCopy = productsCopy.filter((item) =>
-        item.name.toLowerCase().includes(search.toLowerCase())
-      );
-    }
-    if (category.length > 0) {
-      productsCopy = productsCopy.filter((item) =>
-        category.includes(item.category)
-      );
-    }
-    if (subCategory.length > 0) {
-      productsCopy = productsCopy.filter((item) =>
-        subCategory.includes(item.subCategory)
-      );
-    }
-    setFilterProducts(productsCopy);
-  };
-
-  const sortProduct = () => {
-    let fpProduct = filterProducts.slice();
-    switch (sortType) {
-      case "low-high":
-        setFilterProducts(fpProduct.sort((a, b) => a.price - b.price));
-        break;
-      case "high-low":
-        setFilterProducts(fpProduct.sort((a, b) => b.price - a.price));
-        break;
-      default:
-        applyFilter();
-        break;
-    }
-  };
-
-  useEffect(() => {
-    applyFilter();
-  }, [category, subCategory, search, showSearch]);
-
-  useEffect(() => {
-    sortProduct();
-  }, [sortType]);
   return (
-    <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
-      {/*filers option*/}
-      <div className="min-w-60">
-        <p
-          onClick={() => setShowFilter(!showFilter)}
-          className="my-2 text-xl flex-items-center cursor-pointer gap-2"
-        >
-          FILTER
-          <img
-            src={assets.dropdown_icon}
-            alt=""
-            className={`h-3 sm:hidden ${showFilter ? "rotate-90" : ""}`}
-          />
+    <section className="py-5 px-4 md:px-12 lg:px-20 bg-gray-50 text-gray-800">
+      {/* Banner Image */}
+      <div className="w-full mb-12 ">
+        <img
+          src="https://image.pollinations.ai/prompt/Services%20FUND%20RECOVERY,%20smaller%20text,%20smaller%20safe%20and%20coins"
+          alt="Our Services"
+          className="w-full h-40 md:h-96 object-cover rounded-lg shadow-md"
+        />
+      </div>
+
+      {/* Heading */}
+      <div className="text-center mb-12">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-[#0A66C2]">
+          Our Recovery Services
+        </h1>
+        <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">
+          We offer specialized fund recovery solutions for victims of online
+          fraud.
         </p>
-        <div
-          className={`border border-gray-300 pl-5 py-3 mt-6 ${
-            showFilter ? "" : "hidden"
-          } sm:block`}
-        >
-          <p className="mb-3 text-sm font-medium">CATEGORIES</p>
-          <div className="flex flex-col gap-2 text-sm font-light text-gray-700">
-            <p className="flex gap-2">
-              <input
-                type="checkbox"
-                className="w-3"
-                value={"Fashion"}
-                onChange={toggleCategory}
-              />
-              Fashion
-            </p>
-            <p className="flex gap-2">
-              <input
-                onChange={toggleCategory}
-                type="checkbox"
-                className="w-3"
-                value={"Gift Items"}
-              />
-              Gift Items
-            </p>
-            <p className="flex gap-2">
-              <input
-                onChange={toggleCategory}
-                type="checkbox"
-                className="w-3"
-                value={"Used Cars"}
-              />
-              Used Cars
-            </p>
-          </div>
+      </div>
+
+      {/* Services Grid */}
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Crypto Recovery */}
+        <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+          <h2 className="text-2xl font-semibold mb-3 text-[#0A66C2]">
+            Crypto Recovery
+          </h2>
+          <p className="text-gray-700 mb-4">
+            Lost money to a crypto scam? Our expert blockchain analysts can
+            trace wallet transactions and assist in compiling reports for legal
+            and regulatory bodies.
+          </p>
+          <ul className="list-disc pl-5 text-gray-600 mb-4">
+            <li>Bitcoin & Altcoin tracing</li>
+            <li>Exchange platform disputes</li>
+            <li>Wallet forensic analysis</li>
+          </ul>
         </div>
-        {/*subcategory*/}
-        <div
-          className={`border border-gray-300 pl-5 py-3 my-5 ${
-            showFilter ? "" : "hidden"
-          } sm:block`}
-        >
-          <p className="mb-3 text-sm font-medium">TYPE</p>
-          <div className="flex flex-col gap-2 text-sm font-light text-gray-700">
-            <p className="flex gap-2">
-              <input
-                type="checkbox"
-                className="w-3"
-                value={"Accessories"}
-                onChange={toggleSubCategory}
-              />
-              Accessories
-            </p>
-            <p className="flex gap-2">
-              <input
-                onChange={toggleSubCategory}
-                type="checkbox"
-                className="w-3"
-                value={"Fragrance"}
-              />
-              Fragrance
-            </p>
-            <p className="flex gap-2">
-              <input
-                onChange={toggleSubCategory}
-                type="checkbox"
-                className="w-3"
-                value={"Gift Sets"}
-              />
-              Gift Sets
-            </p>
-          </div>
+
+        {/* Bank Transfer Fraud */}
+        <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+          <h2 className="text-2xl font-semibold mb-3 text-[#0A66C2]">
+            Bank Transfer Fraud
+          </h2>
+          <p className="text-gray-700 mb-4">
+            Have you experienced unauthorized bank withdrawals or wire transfer
+            fraud? We help initiate communication with financial institutions
+            and assist in filing necessary fraud claims.
+          </p>
+          <ul className="list-disc pl-5 text-gray-600 mb-4">
+            <li>Wire transfer scam assistance</li>
+            <li>Bank coordination & evidence review</li>
+            <li>Document preparation for dispute filing</li>
+          </ul>
+        </div>
+
+        {/* Investment Scam Recovery */}
+        <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+          <h2 className="text-2xl font-semibold mb-3 text-[#0A66C2]">
+            Investment Scam Recovery
+          </h2>
+          <p className="text-gray-700 mb-4">
+            Fake brokers or fraudulent trading platforms stole your money? Our
+            consultants review your case, collect evidence, and escalate it to
+            the proper financial authorities and legal support networks.
+          </p>
+          <ul className="list-disc pl-5 text-gray-600 mb-4">
+            <li>Broker validation & research</li>
+            <li>Case escalation to regulators</li>
+            <li>Claim documentation assistance</li>
+          </ul>
         </div>
       </div>
-      <div className="flex-1">
-        <div className="flex justify-between text-base sm:text-2xl mb-4">
-          <Title text1={"ALL"} text2={"COLLECTIONS"} />
-          <select
-            onChange={(e) => setSortType(e.target.value)}
-            className="border-2 border-gray-300 text-sm px-2"
-          >
-            <option value="relavent">Sort by: Relavent</option>
-            <option value="low-high">Sort by: Low to High</option>
-            <option value="high-low">Sort by: High to Low</option>
-          </select>
-        </div>
-        {/*Map products*/}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6">
-          {filterProducts.map((item, index) => (
-            <ProductItem
-              key={index}
-              name={item.name}
-              id={item._id}
-              price={item.price}
-              image={item.image}
-            />
-          ))}
-        </div>
+
+      {/* CTA */}
+      <div className="text-center mt-16">
+        <h3 className="text-2xl font-semibold mb-4">
+          Ready to start your recovery journey?
+        </h3>
+        <Link to="/contact">
+          <button className="bg-[#0A66C2] text-white px-6 py-3 rounded-md hover:bg-black transition">
+            Contact Our Recovery Team
+          </button>
+        </Link>
       </div>
-    </div>
+    </section>
   );
 };
 

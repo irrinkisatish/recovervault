@@ -11,8 +11,6 @@ const Home = () => {
       <Hero />
       <LatestCollection />
       <BestSelling />
-      <OurPolicy />
-      <NewsLetterBox />
     </div>
   );
 };

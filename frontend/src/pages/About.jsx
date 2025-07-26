@@ -1,51 +1,50 @@
 import React from "react";
 import { assets } from "../assets/assets";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
-    <div>
-      <div>
-        <section class="flex flex-col md:flex-row items-center h-auto md:h-screen w-full py-16 md:py-24 bg-white">
-          <div class="w-full max-w-[1130px] px-4 md:px-0 mx-auto flex flex-col md:flex-row items-center justify-around">
-            <img
-              src={assets.about_img}
-              class="w-[300px] md:w-[400px] rounded-[12px] mb-8 md:mb-0"
-            />
-            <div class="w-full md:w-[540px] text-center md:text-left">
-              <h2 class="text-[#333] text-[25px] md:text-[50px] font-semibold mb-2.5">
-                About Us
-              </h2>
-              <h5 class="text-[#333] text-[18px] md:text-[22px] font-medium mb-5">
-                Your One-Stop{" "}
-                <span class="text-[#ed139a]">Shopping Destination</span>
-              </h5>
-              <p class="text-[#333] text-[16px] md:text-[18px] leading-[25px] tracking-[1px]  text-justify">
-                Welcome to Solomon Trading LLC — your one-stop shop for all
-                things stylish and practical! We bring you a diverse selection
-                of fashion goods, unique gift items, high-quality home decor,
-                and wholesale deals on used cars and scrap materials. Whether
-                you're shopping for the latest fashion trends, seeking a
-                thoughtful gift, or looking to upgrade your vehicle, we’ve got
-                you covered. Our mission is to provide customers with a
-                hassle-free shopping experience that includes exceptional
-                customer service, fast shipping, and a wide array of
-                high-quality products at unbeatable prices. Explore our
-                offerings and enjoy a seamless shopping experience with Solomon
-                Trading LLC — where convenience and quality meet.
-              </p>
-              <div class="mt-8">
-                <a
-                  href="#"
-                  class="text-[16px] md:text-[18px] bg-[#ed139a] text-white no-underline border-none px-6 py-3 rounded-md transition duration-500 hover:bg-black"
-                >
-                  Shop Now
-                </a>
-              </div>
-            </div>
+    <section className="flex flex-col md:flex-row items-center w-full py-5 md:py-5 bg-white">
+      <div className="w-full max-w-[1130px] px-4 md:px-0 mx-auto flex flex-col md:flex-row items-center justify-around">
+        <img
+          src={assets.about_img}
+          alt="About Recovery Vault"
+          className="w-[340px] md:w-[460px] rounded-[12px] mb-8 md:mb-0 shadow-xl"
+        />
+        <div className="w-full md:w-[540px] text-center md:text-left">
+          <h2 className="text-[#1A1A1A] text-[26px] md:text-[48px] font-bold mb-3">
+            About Us
+          </h2>
+          <h5 className="text-[#444] text-[18px] md:text-[22px] font-medium mb-5">
+            Trusted Experts in{" "}
+            <span className="text-[#0A66C2]">Fund Recovery</span>
+          </h5>
+          <p className="text-[#333] text-[16px] md:text-[18px] leading-[26px] tracking-[0.5px] text-justify">
+            At <strong>Recovery Vault</strong>, we specialize in helping
+            individuals and businesses recover funds lost to cryptocurrency
+            scams, investment frauds, and unauthorized bank transfers. Our
+            global network of financial investigators, blockchain analysts, and
+            legal consultants work relentlessly to give you the best possible
+            chance at reclaiming your lost money.
+            <br />
+            <br />
+            With a strict focus on confidentiality, ethical practices, and
+            transparency, we strive to make a stressful situation easier to
+            handle. We are not just a service — we are your partner in seeking
+            justice and financial recovery. Get started today and take back
+            control of your financial future.
+          </p>
+
+          <div className="mt-8">
+            <Link to="/contact">
+              <button className="text-[16px] md:text-[18px] bg-[#0A66C2] text-white px-6 py-3 rounded-md transition duration-500 hover:bg-black">
+                Talk to Our Experts
+              </button>
+            </Link>
           </div>
-        </section>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
